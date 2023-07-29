@@ -19,19 +19,19 @@ export class WeatherService implements OnInit {
   }
 
   getWeather(city: string) {
-    const localWeather = localStorage.getItem('localWeather')
-    if (localWeather) {
-      this.weather.next(JSON.parse(localWeather))
-    } else {
-      const params = new HttpParams()
-        .set('units', 'metric')
-        .set('q', city)
-        .set('appid', environment.apiKey)
+    console.log("Called")
+    const params = new HttpParams()
+      .set('units', 'metric')
+      .set('q', city)
+      .set('appid', environment.apiKey)
 
-      this.http.get<Weather>(environment.apiUrl + 'weather', { params }).subscribe(weather => {
-        localStorage.setItem('localWeather', JSON.stringify(weather));
-        this.weather.next(weather);
+    this.http.get<Weather>(environment.apiUrl + 'weather', { params })
+      .subscribe({
+        next: weather => {
+          this.weather.next(weather);
+        },
+        error: error => console.error(error)
       })
-    }
   }
 }
+

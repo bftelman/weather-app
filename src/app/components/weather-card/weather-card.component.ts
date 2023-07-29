@@ -15,8 +15,6 @@ export class WeatherCardComponent implements OnInit {
     this.weatherService.weather$.subscribe(data => {
       this.weather = data;
     })
-
-    this.weather = JSON.parse(localStorage.getItem('localWeather')!)
   }
 
 }
