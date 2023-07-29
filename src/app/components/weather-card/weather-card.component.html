@@ -1,0 +1,21 @@
+<div class="wrapper">
+    <app-city-search></app-city-search>
+    <div class="weather-card" *ngIf="weather">
+        <div class="row">
+            <div class="col">
+                <h1 class="weather-card-location">{{weather.name}}, {{weather.sys.country}}</h1>
+                <h2 class="weather-condition">{{weather.weather[0].main}}</h2>
+            </div>
+            <div class="col">
+                <img [src]="'https://openweathermap.org/img/wn/' +
+                    weather.weather[0].icon + '@2x.png'" [alt]="weather.weather[0].main" class="weather-icon">
+                <h4 class="weather-temperature">{{weather.main.temp | number:'1.0-0'}} &#8451; </h4>
+            </div>
+        </div>
+        <ul class="weather-data">
+            <li>Pressure: {{weather.main.pressure}} hPa</li>
+            <li>Humidity: {{weather.main.humidity}} %</li>
+            <li>Wind: {{weather.wind.speed}} m/s</li>
+        </ul>
+    </div>
+</div>

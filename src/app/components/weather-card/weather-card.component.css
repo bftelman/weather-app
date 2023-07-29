@@ -1,0 +1,65 @@
+.weather-card {
+    padding: 1em;
+    background-color: white;
+}
+
+.wrapper {
+    min-height: calc(100vh - 96px);
+    border: 1px solid #c3c3c3;
+    margin: 48px auto;
+    opacity: 0.7;
+}
+
+/* Extra small */
+@media only screen and (min-width: 240px) and (max-width: 64em) {
+    .wrapper {
+        margin: 0;
+        width: 100%;
+        min-height: 100vh;
+    }
+}
+
+/* Large devices such as laptops (1024px and up) */
+@media only screen and (min-width: 64em) {
+    .wrapper {
+        width: 36%;
+    }
+}
+
+/* Largest devices such as desktops (1280px and up) */
+@media only screen and (min-width: 80em) {
+    .wrapper {
+        width: 80%;
+    }
+}
+
+.weather-card-location {
+    font-size: clamp(16px, 4vw, 120px);
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.col:last-child {
+    margin-left: auto;
+}
+
+.weather-icon {
+    width: 96px;
+    height: 96px;
+}
+
+ul {
+    margin-top: 2em;
+    list-style: none;
+    font-size: 2rem;
+}
