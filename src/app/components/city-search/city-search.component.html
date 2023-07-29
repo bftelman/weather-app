@@ -1,4 +1,9 @@
 <div class="wrapper">
     <input type="text" class="" placeholder="City. Example: Baku" #cityInput (keydown.enter)="search(cityInput.value)">
-    <button (click)="search(cityInput.value)"> <span class="s-text">Search</span> <span class="s-icon"> > </span> </button>
+    <button (click)="search(cityInput.value)">
+        <span class="s-text">Search</span>
+        <span class="material-symbols-outlined search">
+            search
+        </span>
+    </button>
 </div>

@@ -19,7 +19,6 @@ export class WeatherService implements OnInit {
   }
 
   getWeather(city: string) {
-    console.log("Called")
     const params = new HttpParams()
       .set('units', 'metric')
       .set('q', city)

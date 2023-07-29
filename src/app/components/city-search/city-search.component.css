@@ -1,31 +1,38 @@
 .wrapper {
     display: flex;
     flex-direction: row;
-    border-bottom: 1px solid #c3c3c3;
 }
 
 .wrapper:focus-within {
-    outline: 1px solid black;
+    outline: 1px solid #c3c3c3;
 }
 
 input {
     flex: 1;
 }
 
-input, button {
+input,
+button {
     font-family: inherit;
     font-size: 1.2rem;
     padding: 0.5em 1em;
     border: none;
     outline: none;
+    background: none;
+    color: #fefefe;
 }
 
 button {
-    display: block;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
     cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    background-color: #0f0f0f;
 }
 
-.s-icon {
+.search {
     display: none;
 }
 
@@ -33,7 +40,13 @@ button {
     .s-text {
         display: none;
     }
-    .s-icon {
+
+    .search {
         display: block;
+    }
+
+    input {
+        width: 96px;
+        font-size: 24px;
     }
 }
